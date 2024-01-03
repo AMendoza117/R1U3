@@ -7,7 +7,7 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
 import { DashboardSingletonComponent } from './componentes/dashboard-singleton/dashboard-singleton.component';
 
 const routes: Routes = [
-  {path: '',redirectTo:'imprimir', pathMatch: 'full'},
+  {path: '',redirectTo:'dashboard', pathMatch: 'full'},
   {path: 'dashboard',component:DashboardComponent},
   {path: 'ver-proyecto/:id',component:VerProyectoComponent},
   {path: 'imprimir',component:ImprimirComponent},

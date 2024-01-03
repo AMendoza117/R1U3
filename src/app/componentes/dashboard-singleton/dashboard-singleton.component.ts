@@ -40,13 +40,11 @@ export class DashboardSingletonComponent {
       this.numPDFs++;
       this.numPDFsPendientes++;
 
-      // Puedes resetear el formulario después de enviarlo
       this.documentoForm.reset();
     }
   }
 
   onFileChange(event: any) {
-    // Lógica para manejar el cambio de archivos
     console.log(event.target.files);
   }
 
@@ -55,15 +53,13 @@ export class DashboardSingletonComponent {
   }
 
   get documentosEnRevision() {
-    return this.documentService.getDocumentsByState('accepted'); // Ajusta según tu lógica
+    return this.documentService.getDocumentsByState('accepted'); 
   }
 
   redirectToPDF(documento: any) {
-    // Lógica para redirigir a la vista del documento
   }
 
   private generateDocumentPath(): string {
-    // Lógica para generar la ruta del documento (puedes ajustar según tus necesidades)
     const timestamp = Date.now();
     return `/documents/${timestamp}_documento.pdf`;
   }

@@ -19,7 +19,7 @@ export class VerProyectoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      this.idDocumento = +params.get('id'); // Convierte el parámetro a número y asigna a this.idProyecto
+      this.idDocumento = +params.get('id'); 
       if (!isNaN(this.idDocumento)) {
         this.loadPDF(this.idDocumento);
       }

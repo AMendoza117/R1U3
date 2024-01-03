@@ -31,6 +31,44 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card-body" >
+            <div class="card">
+            <div class="card-body" style="background-color: rgb(218, 218, 253); backdrop-filter: blur(5px);">
+    
+            <form [formGroup]="documentoForm" role="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" formControlName="email" />
+                    <div *ngIf="documentoForm.get('email').hasError('required') && documentoForm.get('email').touched"
+                        class="text-danger">
+                        *Campo requerido
+                    </div>
+                    <div *ngIf="documentoForm.get('email').hasError('email') && documentoForm.get('email').touched"
+                        class="text-danger">
+                        *Ingrese un correo electrónico válido
+                    </div>
+                </div>
+            
+                <div class="form-group" style="margin: 20px;">
+                    <label for="file">Adjuntar PDF:</label>
+                    <input type="file" id="fileSource" formControlName="fileSource" (change)="onFileChange($event)" multiple />
+                    <div *ngIf="documentoForm.get('fileSource').hasError('required') && documentoForm.get('fileSource').touched"
+                        class="text-danger">
+                        *Sólo puede subir un archivo, si desea añadir más archivos lo podrá hacer más adelante
+                    </div>
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="reset" class="btn btn-default">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+
+
         </div>
         <!-- Pendientes -->
         <div class="row">
